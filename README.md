@@ -78,18 +78,4 @@ LEFT JOIN
     Person.PhoneNumberType AS pt ON ph.PhoneNumberTypeID = pt.PhoneNumberTypeID;
 
 
-USE AdventureWorks2012; 
 
-SELECT
-    c.CustomerID,
-    c.FirstName,
-    c.LastName,
-    SUM(soh.TotalDue) AS TotalSales
-FROM
-    Sales.Customer AS c
-JOIN
-    Sales.SalesOrderHeader AS soh ON c.CustomerID = soh.CustomerID
-WHERE
-    UPPER(c.FirstName) = UPPER('Gustavo') AND UPPER(c.LastName) = UPPER('Achong')
-GROUP BY
-    c.CustomerID, c.FirstName, c.LastName;
